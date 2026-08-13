@@ -6,10 +6,11 @@ const server = http.createServer((req, res) => {
     res.statusCode = 201;
     res.setHeader('Content-Type','application/json charset=utf-8');
 
-    res.end(JSON.stringify({ status: "ok" }))
+(JSON.stringify({ status: "ok" }))
 });
 
 server.listen(PORTA, () => {
     console.log(`Servidor funcionndo na porta ${PORTA}`);
     console.log(`${new Date().toISOString()}`)
 })
+// se tirar o `res.end()`, ele nao termina d executar entao nao aparece a mensagem no navegador
