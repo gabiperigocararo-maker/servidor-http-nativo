@@ -1,14 +1,15 @@
 const http = require('node:http');
 const PORTA = 3000;
 const server = http.createServer((req, res) => {
-console.log(`Requisição recebida! ${req.method} ${req.url}`);
+    console.log(`Requisição recebida! ${req.method} ${req.url}`);
 
-res.statusCode = 20;1
-res.setHeader('Content-Type' , 'text/plain; charset=utf-8');
+    res.statusCode = 201;
+    res.setHeader('Content-Type', 'text/plain; charset=utf-8');
 
-res.end("Recurso criado!")
-    });
+    res.end("Recurso criado!")
+});
 
-    server.listen(PORTA, ()=>{
-        console.log(`Servidor funcionndo na porta ${PORTA}`);
-    })
+server.listen(PORTA, () => {
+    console.log(`Servidor funcionndo na porta ${PORTA}`);
+    console.log(`${new Date().toISOString()}`)
+})
