@@ -29,6 +29,11 @@ const server = http.createServer((req, res) => {
         return res.end(JSON.stringify(produtos));
     }
 
+      else{
+        res.statusCode = 404
+        return res.end(JSON.stringify("error 404"))
+    }
+
     res.end(JSON.stringify({data: "Página Inicial"}))
 })
 
